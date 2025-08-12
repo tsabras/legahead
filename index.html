@@ -3,7 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Leg+Ahead Landing Pages</title>
+  <title>Landing Page Selector</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-papbXEdTak5xivn5P855DOajp7X+6dPnM4YoCO8Q0ACPnQxQZAZ6A6uhBQ7krvWXLfJQ4/133u+fwuyjX+AUFg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -17,11 +24,6 @@
       margin: 0;
       text-align: center;
       padding: 1rem;
-    }
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      color: #fca311;
     }
     .button-container {
       display: flex;
@@ -37,7 +39,7 @@
       font-weight: 700;
       padding: 1rem 2rem;
       border-radius: 30px;
-      box-shadow: 0 4px 10px rgba(252,163,17,0.5);
+      box-shadow: 0 4px 10px rgba(252, 163, 17, 0.5);
       transition: background-color 0.3s ease, color 0.3s ease;
       font-size: 1.2rem;
       min-width: 180px;
@@ -47,13 +49,17 @@
     a.button-link:focus {
       background-color: #e29600;
       color: #fff;
-      box-shadow: 0 6px 14px rgba(226,150,0,0.8);
+      box-shadow: 0 6px 14px rgba(226, 150, 0, 0.8);
     }
     footer {
       margin-top: auto;
       padding: 1rem;
       color: #d9d9d9;
       font-size: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
     }
     footer a {
       color: #fca311;
@@ -64,17 +70,32 @@
     footer a:focus {
       text-decoration: underline;
     }
+    .social-icon {
+      font-size: 1.5rem;
+      vertical-align: middle;
+      margin-left: 0.25rem;
+      color: #fca311;
+      transition: color 0.3s ease;
+    }
+    .social-icon:hover,
+    .social-icon:focus {
+      color: #e29600;
+    }
   </style>
 </head>
 <body>
-  <h1>Leg+Ahead Landing Pages</h1>
-  <div class="button-container">
+  <div class="button-container" role="main" aria-label="Landing page options">
     <a href="athletic/indexx.html" class="button-link" aria-label="Go to Athletic Brand or Niche landing page">Athletic Brand or Niche</a>
     <a href="legal/indexy.html" class="button-link" aria-label="Go to Legal Brand or Niche landing page">Legal Brand or Niche</a>
   </div>
   <footer>
-    Contact The Owner: <a href="mailto:owler1985@gmail.com">owler1985@gmail.com</a><br />
-    Facebook: <a href="https://fb.com/owler1985" target="_blank" rel="noopener noreferrer">fb.com/owler1985</a>
+    <div>Contact The Owner: <a href="mailto:owler1985@gmail.com">owler1985@gmail.com</a></div>
+    <div>
+      Facebook: 
+      <a href="https://fb.com/owler1985" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page">
+        <i class="fab fa-facebook-square social-icon" aria-hidden="true"></i>
+      </a>
+    </div>
   </footer>
 </body>
 </html>
