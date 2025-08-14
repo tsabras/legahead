@@ -14,7 +14,7 @@
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: url('https://images.unsplash.com/photo-1591696331119-218b85c7a3b4?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+      background: url('https://images.unsplash.com/photo-1564869737075-ff2f2f6b35b6?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
       background-size: cover;
       color: #fca311;
       display: flex;
@@ -28,21 +28,20 @@
       position: relative;
     }
 
-    /* Overlay for better text visibility */
+    /* Overlay for better button visibility */
     body::before {
       content: "";
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0,0,0,0.6);
+      background: rgba(0,0,0,0.65);
       z-index: 0;
     }
 
     .button-container {
       display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-direction: column; /* stacked vertically */
+      gap: 1.5rem; /* space between buttons */
       z-index: 1;
       position: relative;
     }
@@ -52,12 +51,12 @@
       color: #142850;
       text-decoration: none;
       font-weight: 700;
-      padding: 1rem 2rem;
+      padding: 1rem 2.5rem;
       border-radius: 30px;
-      box-shadow: 0 4px 10px rgba(252, 163, 17, 0.5);
+      box-shadow: 0 4px 12px rgba(252, 163, 17, 0.5);
       transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-      font-size: 1.2rem;
-      min-width: 220px;
+      font-size: 1.25rem;
+      min-width: 240px;
       display: inline-block;
     }
 
@@ -65,7 +64,7 @@
     a.button-link:focus {
       background-color: #e29600;
       color: #fff;
-      box-shadow: 0 6px 14px rgba(226, 150, 0, 0.8);
+      box-shadow: 0 6px 16px rgba(226, 150, 0, 0.8);
       transform: translateY(-3px);
     }
 
