@@ -3,52 +3,148 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Athletic Field</title>
+  <title>Landing Page Selector</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-papbXEdTak5xivn5P855DOajp7X+6dPnM4YoCO8Q0ACPnQxQZAZ6A6uhBQ7krvWXLfJQ4/133u+fwuyjX+AUFg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
   <style>
-    body {
+    html, body {
+      height: 100%;
       margin: 0;
-      height: 100vh;
-      background-color: #1e1e2f; /* professional dark color */
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #ffffff; /* White background */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #142850;
+      text-align: center;
+    }
+
+    .content-wrapper {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      gap: 1.8rem;
+    }
+
+    .button-link {
+      background: linear-gradient(135deg, #fca311, #e29600);
+      color: #142850;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 1rem 3rem;
+      border-radius: 35px;
+      box-shadow: 0 6px 15px rgba(252, 163, 17, 0.6);
+      transition: all 0.3s ease;
+      font-size: 1.3rem;
+      min-width: 260px;
+      display: inline-block;
+      text-align: center;
+      animation: glow 2s infinite alternate;
+    }
+
+    .button-link:hover,
+    .button-link:focus {
+      background: linear-gradient(135deg, #e29600, #fca311);
+      color: #fff;
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 8px 20px rgba(226, 150, 0, 0.85);
+    }
+
+    .button-link:active {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 5px 12px rgba(226, 150, 0, 0.75);
+    }
+
+    @keyframes glow {
+      0% {
+        box-shadow: 0 6px 15px rgba(252, 163, 17, 0.6);
+      }
+      100% {
+        box-shadow: 0 6px 25px rgba(252, 163, 17, 1);
+      }
+    }
+
+    footer {
+      padding: 1rem;
+      color: #142850;
+      font-size: 1rem;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      font-family: Arial, sans-serif;
+      gap: 0.8rem;
     }
 
-    .logo {
-      max-width: 150px;
-      margin-bottom: 30px;
-    }
-
-    .button-container {
+    .footer-logo {
       display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    button {
-      padding: 15px 30px;
-      font-size: 16px;
+      align-items: center;
+      gap: 0.6rem;
       font-weight: bold;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      background-color: #4CAF50;
-      color: white;
-      transition: background-color 0.3s;
+      font-size: 1rem;
+      color: #142850;
     }
 
-    button:hover {
-      background-color: #45a049;
+    .footer-logo img {
+      height: 40px;
+      width: auto;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-icon {
+      font-size: 1.5rem;
+      vertical-align: middle;
+      color: #fca311;
+      transition: color 0.3s ease;
+    }
+
+    .social-icon:hover,
+    .social-icon:focus {
+      color: #e29600;
+    }
+
+    @media (max-width: 480px) {
+      .button-link {
+        font-size: 1.1rem;
+        padding: 0.9rem 2rem;
+        min-width: 200px;
+      }
     }
   </style>
 </head>
 <body>
-  <img src="https://iili.io/FDRm6b4.png" alt="Logo" class="logo">
-  <div class="button-container">
-    <button>Button 1</button>
-    <button>Button 2</button>
+  <div class="content-wrapper" role="main" aria-label="Landing page options">
+    <a href="athletic/indexx.html" class="button-link" aria-label="Go to Athletic Brand or Niche landing page">Athletic Brand or Niche</a>
+    <a href="legal/indexy.html" class="button-link" aria-label="Go to Legal Brand or Niche landing page">Legal Brand or Niche</a>
   </div>
+
+  <footer>
+    <div class="footer-logo">
+      <img src="https://iili.io/FDRm6b4.png" alt="Owler Logo">
+      Owler's Digital Assets Marketplace
+    </div>
+    <div class="social-links">
+      <a href="mailto:owler1985@gmail.com" aria-label="Contact the owner by email">
+        <i class="fas fa-envelope-square fa-3x social-icon"></i>
+      </a>
+      <a href="https://fb.com/owler1985" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page">
+        <i class="fab fa-facebook-square fa-3x social-icon"></i>
+      </a>
+    </div>
+  </footer>
 </body>
 </html>
