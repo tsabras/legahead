@@ -12,22 +12,25 @@
     referrerpolicy="no-referrer"
   />
   <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: url('https://images.unsplash.com/photo-1564869737075-ff2f2f6b35b6?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
       background-size: cover;
-      margin: 0;
-      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: center;
       position: relative;
       color: #fca311;
+      text-align: center;
     }
 
-    /* Dark overlay for readability */
+    /* Dark overlay */
     body::before {
       content: "";
       position: absolute;
@@ -37,17 +40,18 @@
       z-index: 0;
     }
 
-    .button-container {
-      display: flex;
-      flex-direction: column; /* stacked vertically */
-      gap: 1.8rem; /* space between buttons */
+    .content-wrapper {
       z-index: 1;
       position: relative;
-      align-items: center;
+      display: flex;
+      flex-direction: column;
       justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      gap: 1.8rem;
     }
 
-    a.button-link {
+    .button-link {
       background: linear-gradient(135deg, #fca311, #e29600);
       color: #142850;
       text-decoration: none;
@@ -60,23 +64,32 @@
       min-width: 260px;
       display: inline-block;
       text-align: center;
+      animation: glow 2s infinite alternate;
     }
 
-    a.button-link:hover,
-    a.button-link:focus {
+    .button-link:hover,
+    .button-link:focus {
       background: linear-gradient(135deg, #e29600, #fca311);
       color: #fff;
       transform: translateY(-5px) scale(1.05);
       box-shadow: 0 8px 20px rgba(226, 150, 0, 0.85);
     }
 
-    a.button-link:active {
+    .button-link:active {
       transform: translateY(-2px) scale(1.02);
       box-shadow: 0 5px 12px rgba(226, 150, 0, 0.75);
     }
 
+    @keyframes glow {
+      0% {
+        box-shadow: 0 6px 15px rgba(252, 163, 17, 0.6);
+      }
+      100% {
+        box-shadow: 0 6px 25px rgba(252, 163, 17, 1);
+      }
+    }
+
     footer {
-      margin-top: auto;
       padding: 1rem;
       color: #d9d9d9;
       font-size: 1rem;
@@ -112,9 +125,8 @@
       color: #e29600;
     }
 
-    /* Responsive tweaks */
     @media (max-width: 480px) {
-      a.button-link {
+      .button-link {
         font-size: 1.1rem;
         padding: 0.9rem 2rem;
         min-width: 200px;
@@ -123,7 +135,7 @@
   </style>
 </head>
 <body>
-  <div class="button-container" role="main" aria-label="Landing page options">
+  <div class="content-wrapper" role="main" aria-label="Landing page options">
     <a href="athletic/indexx.html" class="button-link" aria-label="Go to Athletic Brand or Niche landing page">Athletic Brand or Niche</a>
     <a href="legal/indexy.html" class="button-link" aria-label="Go to Legal Brand or Niche landing page">Legal Brand or Niche</a>
   </div>
