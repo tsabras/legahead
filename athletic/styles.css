@@ -6,7 +6,7 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #0d1b2a;
+  background: #F7E7CE; /* Pale Gold / Champagne */
   color: #8B0000;
   display: flex;
   flex-direction: column;
