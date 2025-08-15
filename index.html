@@ -22,6 +22,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between; /* Spread content and footer */
+      align-items: center; /* center horizontally */
     }
 
     body {
@@ -34,7 +35,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: clamp(1rem, 2vw, 2rem);
+      gap: clamp(1.5rem, 4vw, 3rem); /* dynamic gap between main buttons */
       width: 90%;
       max-width: 800px;
       padding: 2rem 1rem;
@@ -79,15 +80,20 @@
 
     /* Buy Now Section */
     .buy-now-section {
-      margin-top: 2rem;
+      margin-top: clamp(2rem, 5vw, 3rem); /* dynamic spacing above Buy Now section */
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(0.5rem, 2vw, 1rem);
     }
 
     .buy-now-section p {
       color: #28a745;
       font-weight: bold;
       font-size: clamp(1rem, 2vw, 1.2rem);
-      margin-bottom: 1rem;
+      margin-bottom: clamp(0.5rem, 1vw, 1rem);
     }
 
     .buy-buttons {
@@ -112,19 +118,22 @@
     }
 
     footer {
-      padding: 1.5rem 1rem;
+      padding: clamp(1rem, 2vw, 2rem) 1rem; /* dynamic padding */
       background-color: #f5f5dc; /* match body */
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1rem;
+      justify-content: center;
+      gap: clamp(0.5rem, 2vw, 1.5rem); /* dynamic gap between footer items */
       color: #142850;
+      width: 100%;
     }
 
     .footer-logo {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      justify-content: center;
+      gap: clamp(0.3rem, 1vw, 0.5rem);
     }
 
     .footer-logo img {
@@ -141,6 +150,8 @@
     .social-links {
       display: flex;
       gap: clamp(1rem, 3vw, 1.5rem);
+      justify-content: center;
+      align-items: center;
     }
 
     .social-icon {
@@ -154,7 +165,6 @@
       color: #e29600;
     }
 
-    /* Additional responsive adjustments */
     @media (max-width: 480px) {
       .content-wrapper { gap: 1.5rem; }
       .buy-buttons { gap: 1rem; }
