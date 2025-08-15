@@ -21,8 +21,12 @@
       text-align: center;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      justify-content: space-between; /* Spread content and footer */
+    }
+
+    body {
+      min-height: 100vh;
+      box-sizing: border-box;
     }
 
     .content-wrapper {
@@ -34,6 +38,7 @@
       width: 90%;
       max-width: 800px;
       padding: 2rem 1rem;
+      flex-grow: 1; /* allow main content to grow */
       box-sizing: border-box;
     }
 
@@ -42,12 +47,12 @@
       color: #142850;
       text-decoration: none;
       font-weight: 700;
-      padding: 1.5rem 4rem;
+      padding: clamp(1rem, 2vw, 1.5rem) clamp(2.5rem, 5vw, 4rem); /* responsive padding */
       border-radius: 35px;
       box-shadow: 0 6px 15px rgba(252, 163, 17, 0.6);
       transition: all 0.3s ease;
-      font-size: 1.5rem;
-      min-width: 280px;
+      font-size: clamp(1.2rem, 2vw, 1.5rem); /* responsive font */
+      min-width: 220px;
       display: inline-block;
       text-align: center;
       animation: glow 2s infinite alternate;
@@ -72,30 +77,60 @@
       100% { box-shadow: 0 6px 25px rgba(252, 163, 17, 1); }
     }
 
+    .buy-now-section {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .buy-now-section p {
+      color: #28a745;
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .buy-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .buy-buttons a img {
+      max-width: 160px;
+      max-height: 120px;
+      width: auto;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
     footer {
-      padding: 2rem 1rem;
-      background-color: #f5f5dc;
+      padding: 1.5rem 1rem;
+      background-color: #f5f5dc; /* match body */
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 1rem;
+      color: #142850;
     }
 
     .footer-logo {
       display: flex;
       align-items: center;
       gap: 0.8rem;
-      color: #142850;
     }
 
     .footer-logo img {
-      height: 2.5rem; /* Big logo */
+      height: 2.5rem;
       width: auto;
     }
 
     .footer-logo span {
-      font-size: 1rem; /* Smaller text next to logo */
+      font-size: 1rem;
       font-weight: normal;
+      color: orange; /* changed to orange */
     }
 
     .social-links {
@@ -116,17 +151,19 @@
 
     /* Responsive adjustments */
     @media (max-width: 768px) {
-      .button-link { font-size: 1.3rem; padding: 1.2rem 3rem; }
+      .button-link { font-size: 1.3rem; padding: 1rem 3rem; }
       .footer-logo img { height: 2rem; }
       .social-icon { font-size: 2rem; }
+      .buy-buttons a img { max-width: 140px; max-height: 100px; }
     }
 
     @media (max-width: 480px) {
-      .button-link { font-size: 1.1rem; padding: 1rem 2.5rem; min-width: 200px; }
+      .button-link { font-size: 1.1rem; padding: 0.8rem 2rem; min-width: 180px; }
       .footer-logo img { height: 1.8rem; }
       .footer-logo span { font-size: 0.9rem; }
       .social-icon { font-size: 1.8rem; }
       .content-wrapper { gap: 1.5rem; }
+      .buy-buttons a img { max-width: 120px; max-height: 80px; }
     }
   </style>
 </head>
@@ -134,6 +171,19 @@
   <div class="content-wrapper" role="main" aria-label="Landing page options">
     <a href="athletic/indexx.html" class="button-link" aria-label="Go to Athletic Brand or Niche landing page">Athletic Brand or Niche</a>
     <a href="legal/indexy.html" class="button-link" aria-label="Go to Legal Brand or Niche landing page">Legal Brand or Niche</a>
+
+    <!-- Buy Now Section -->
+    <section class="buy-now-section" aria-label="Buy domain now options">
+      <p>Buy Now</p>
+      <div class="buy-buttons">
+        <a href="https://www.afternic.com/domain/legahead.com" target="_blank" rel="noopener noreferrer" aria-label="Buy domain on Afternic">
+          <img src="https://images.seeklogo.com/logo-png/44/1/afternic-logo-png_seeklogo-440453.png" alt="Afternic logo" />
+        </a>
+        <a href="https://www.namecheap.com/market/buynow/legahead.com" target="_blank" rel="noopener noreferrer" aria-label="Buy domain on Namecheap">
+          <img src="https://yt3.googleusercontent.com/ytc/AIdro_nYIUYmW5WegIWG4jfPmIBa9PNqXsAhM2cPn7MlGhH99Q=s900-c-k-c0x00ffffff-no-rj" alt="Namecheap logo" style="background-color:white; padding:4px;" />
+        </a>
+      </div>
+    </section>
   </div>
 
   <footer>
