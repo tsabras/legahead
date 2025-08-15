@@ -15,27 +15,26 @@
     html, body {
       height: 100%;
       margin: 0;
-    }
-
-    body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f5f5dc; /* Beige background */
+      background-color: #f5f5dc; /* Beige */
+      color: #142850;
+      text-align: center;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      color: #142850;
-      text-align: center;
     }
 
     .content-wrapper {
-      position: relative;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
       gap: 2rem;
+      width: 90%;
+      max-width: 800px;
+      padding: 2rem 1rem;
+      box-sizing: border-box;
     }
 
     .button-link {
@@ -43,15 +42,16 @@
       color: #142850;
       text-decoration: none;
       font-weight: 700;
-      padding: 1.3rem 3.5rem; /* Bigger buttons */
+      padding: 1.5rem 4rem;
       border-radius: 35px;
       box-shadow: 0 6px 15px rgba(252, 163, 17, 0.6);
       transition: all 0.3s ease;
-      font-size: 1.5rem; /* Bigger font */
+      font-size: 1.5rem;
       min-width: 280px;
       display: inline-block;
       text-align: center;
       animation: glow 2s infinite alternate;
+      flex-shrink: 0;
     }
 
     .button-link:hover,
@@ -68,19 +68,13 @@
     }
 
     @keyframes glow {
-      0% {
-        box-shadow: 0 6px 15px rgba(252, 163, 17, 0.6);
-      }
-      100% {
-        box-shadow: 0 6px 25px rgba(252, 163, 17, 1);
-      }
+      0% { box-shadow: 0 6px 15px rgba(252, 163, 17, 0.6); }
+      100% { box-shadow: 0 6px 25px rgba(252, 163, 17, 1); }
     }
 
     footer {
-      padding: 2rem;
-      background-color: #f5f5dc; /* Match body color */
-      color: #142850;
-      font-size: 1.5rem; /* Match social icon size */
+      padding: 2rem 1rem;
+      background-color: #f5f5dc;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -90,15 +84,18 @@
     .footer-logo {
       display: flex;
       align-items: center;
-      gap: 1rem;
-      font-weight: bold;
-      font-size: 2.5rem; /* Match social icons */
+      gap: 0.8rem;
       color: #142850;
     }
 
     .footer-logo img {
-      height: 2.5rem; /* Match social icon size */
+      height: 2.5rem; /* Big logo */
       width: auto;
+    }
+
+    .footer-logo span {
+      font-size: 1rem; /* Smaller text next to logo */
+      font-weight: normal;
     }
 
     .social-links {
@@ -108,7 +105,6 @@
 
     .social-icon {
       font-size: 2.5rem;
-      vertical-align: middle;
       color: #fca311;
       transition: color 0.3s ease;
     }
@@ -118,12 +114,19 @@
       color: #e29600;
     }
 
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .button-link { font-size: 1.3rem; padding: 1.2rem 3rem; }
+      .footer-logo img { height: 2rem; }
+      .social-icon { font-size: 2rem; }
+    }
+
     @media (max-width: 480px) {
-      .button-link {
-        font-size: 1.3rem;
-        padding: 1rem 2.5rem;
-        min-width: 220px;
-      }
+      .button-link { font-size: 1.1rem; padding: 1rem 2.5rem; min-width: 200px; }
+      .footer-logo img { height: 1.8rem; }
+      .footer-logo span { font-size: 0.9rem; }
+      .social-icon { font-size: 1.8rem; }
+      .content-wrapper { gap: 1.5rem; }
     }
   </style>
 </head>
@@ -136,14 +139,14 @@
   <footer>
     <div class="footer-logo">
       <img src="https://iili.io/FD5eJAG.png" alt="Owler Logo">
-      Digital Assets Marketplace
+      <span>Digital Assets Marketplace</span>
     </div>
     <div class="social-links">
       <a href="mailto:owler1985@gmail.com" aria-label="Contact the owner by email">
-        <i class="fas fa-envelope-square fa-3x social-icon"></i>
+        <i class="fas fa-envelope-square social-icon"></i>
       </a>
       <a href="https://fb.com/owler1985" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page">
-        <i class="fab fa-facebook-square fa-3x social-icon"></i>
+        <i class="fab fa-facebook-square social-icon"></i>
       </a>
     </div>
   </footer>
